@@ -1,10 +1,10 @@
-import menuCardTemplate from '../templates/menu-card.hbs';
+import menuCardsTemplate from '../templates/menu-cards.hbs';
 import menuCollection from './menu.json';
 
 const menuListRef = document.querySelector('.js-menu');
 const menuCardsMarkup = makeMenuMarkup(menuCollection);
-menuListRef.insertAdjacentHTML('afterbegin', menuCardsMarkup);
+menuListRef.insertAdjacentHTML('beforeend', menuCardsMarkup);
 
 function makeMenuMarkup(menuCollection) {
-  return menuCollection.map(menuCardTemplate).join('');
+  return menuCardsTemplate(menuCollection);
 }
